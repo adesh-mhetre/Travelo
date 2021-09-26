@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travelo</title>
+    <link rel="stylesheet" href="CSS/booking.css" type="text/css">
+    <!-- CSS only -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous"> -->
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navcontainer">
+            <a class="navbar-brand" href="#">LOGO</a>
+            <div class="navbar-option">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link" href="#">Home</a>
+                    <a class="nav-item nav-link" href="#">Features</a>
+                    <a class="nav-item nav-link" href="#">Pricing</a>
+                    <a class="nav-item nav-link" href="#">BOOK NOW</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- images -->
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 3</div>
+            <img src="img/Lonavala.jpg" style="width:100%">
+            <div class="text">Lonavala</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">2 / 3</div>
+            <img src="img/Mumbai-1.jpg" style="width:100%">
+            <div class="text">Mumbai</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">3 / 3</div>
+            <img src="img/shaniwar-wada.jpg" style="width:100%">
+            <div class="text">Pune</div>
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    </div>
+    <br>
+
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+    <!-- images -->
+
+    <!-- offer -->
+    <div class="offer">
+        <div class="circle">
+            offer
+        </div>
+        <div class="circle">
+            offer
+        </div>
+        <div class="circle">
+            offer
+        </div>
+    </div>
+    <!-- offer -->
+    <!-- booking -->
+    <section class="section-search">
+        <div class="container search-box">
+            <div class="wrapper">
+                <h3>Destination</h3>
+                <div class="custom-select"> <select>
+                        <option value="england">England</option>
+                        <option value="france">France</option>
+                        <option value="italy">Italy</option>
+                        <option value="india">India</option>
+                        <option value="india">Spain</option>
+                        <option value="maldives">Maldives</option>
+                    </select> <span class="arrow"></span> </div>
+            </div>
+            <div class="wrapper">
+                <h3>Date</h3>
+                <div class="custom-date"> <input type="date" id="date"> <img src="img/calendar.d670ce86.svg" alt=""
+                        class="calender-icon"> </div>
+            </div>
+            <div class="wrapper">
+                <h3>Average Price</h3>
+                <div class="custom-select"> <select>
+                        <option value="$200">$200 - $500</option>
+                        <option value="$500">$500 - $1000</option>
+                        <option value="$1000">$1000 - $2000</option>
+                    </select> <span class="arrow"></span> </div>
+            </div> <button class="btn">Search</button>
+        </div>
+    </section>
+    <section>
+        <div class="bookform">
+            <div class="subform">
+                <h2>Booking Form</h2>
+                <table>
+                    <tr>
+                        <td>
+                            <p>Name : </p>
+                        </td>
+                        <td>
+                            <input type="text" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Mobile No : </p>
+                        </td>
+                        <td>
+                            <input type="number" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Email : </p>
+                        </td>
+                        <td>
+                            <input type="email" name="email" id="email" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Address : </p>
+                        </td>
+                        <td>
+                            <textarea name="address" id="" cols="30" rows="5" required></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Comment : </p>
+                        </td>
+                        <td>
+                            <textarea name="comment" id="" cols="30" rows="5"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="submit" value="Book Now" aria-colspan="2">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <a href="#">FAQ</a>
+        <a href="#">Contact Us</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Refund Police</a>
+        <a href="#">&copy; 2021 Travelo</a>
+    </footer>
+    <!-- booking -->
+
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+
+    </script>
+</body>
+
+</html>
